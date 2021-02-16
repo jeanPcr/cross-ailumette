@@ -8,10 +8,27 @@
   "license": "MIT",
   "scripts": {
     "start": "node ailumette",
-    "start-gui": "node ailumette --gui",
+    "start-gui": "electron main.js",
+    "watch": "webpack --config webpack.common.js --watch",
     "dev": "nodemon ailumette"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.2",
+    "electron-reload": "^1.5.0",
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.7",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "electron": "^11.2.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
