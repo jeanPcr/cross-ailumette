@@ -1,0 +1,16 @@
+{
+  "name": "cross-ailumette",
+  "version": "1.0.0",
+  "description": "Aillumette is a game based on matches.",
+  "main": "ailumette.js",
+  "repository": "https://github.com/jeanPcr/cross-ailumette.git",
+  "author": "jeanPcr <jean.coding971@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ailumette",
+    "dev": "nodemon ailumette"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
