@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node ailumette",
+    "start-gui": "node ailumette --gui",
     "dev": "nodemon ailumette"
   },
   "devDependencies": {
