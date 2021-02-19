@@ -1,9 +1,18 @@
 import React from "react";
+import Header from "../components/Header";
+import Logs from "../components/Logs";
+import PlayerControls from "../components/PlayerControls";
+import Score from "../components/Score";
+import Tray from "../components/Tray";
 
 const App = () => {
   return (
     <div>
-      <h1>Hello Wolrd !</h1>
+      <Header />
+      <Score />
+      <Tray />
+      <PlayerControls />
+      <Logs />
     </div>
   );
 };

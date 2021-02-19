@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node ailumette",
-    "start-gui": "electron main.js",
+    "electron": "electron main.js",
+    "start--gui": "start npm run watch  && npm run electron",
     "watch": "webpack --config webpack.common.js --watch",
     "dev": "nodemon ailumette"
   },
@@ -27,8 +28,10 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "chalk": "^4.1.0",
     "electron": "^11.2.3",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "readline": "^1.3.0"
   }
 }
