@@ -1,0 +1,8 @@
+.robot {
+  background-image: url("../../../public/assets/img/robot.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
+}

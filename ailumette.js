@@ -17,12 +17,11 @@ if (options === "--gui") {
   } catch (error) {
     console.log(error);
   }
+  return;
 }
 
 /* INITIALISATION **/
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+
 //Initialize the tray of game
 const launch = async () => {
   console.log(chalk.yellow("Launching✨..."));
@@ -34,6 +33,15 @@ const launch = async () => {
         return launch();
       } else if (parseInt(base) < 5) {
         console.log(chalk.red("Error: not enough ailumettes"));
+        return launch();
+      } else if (
+        parseInt(base) < 0 ||
+        isNaN(parseInt(base)) ||
+        parseInt(base) === undefined
+      ) {
+        console.log(
+          chalk.red("Error: invalid input (positive number expected)")
+        );
         return launch();
       }
       const tray = initPyramid(base);
