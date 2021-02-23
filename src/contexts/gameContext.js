@@ -1,7 +1,9 @@
 import React from "react";
-export const initGame = {
+export const game = {
   isStart: false,
   isOver: false,
   start: () => {},
+  tray: [],
+  playerWon: false,
 };
-export const GameContexte = React.createContext(initGame);
+export const GameContexte = React.createContext(game);

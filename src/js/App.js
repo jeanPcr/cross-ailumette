@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import GameOver from "../components/gameOver/GameOver";
 import Header from "../components/header/Header";
 import Landing from "../components/landing/Landing";
 import Logs from "../components/Logs";
@@ -13,12 +14,15 @@ const App = () => {
   const initGame = {
     isStart: false,
     isOver: false,
+    tray: [],
     start: () => {
       setGameState({ ...initGame, isStart: true });
     },
+    playerWon: false,
   };
 
   const [gameState, setGameState] = useState(initGame);
+  const [matches, setmatches] = useState(0);
 
   return (
     <div>
@@ -27,8 +31,6 @@ const App = () => {
         <GameContexte.Provider value={gameState}>
           {gameState.isStart ? (
             <>
-              {" "}
-              <Score />
               <Tray />
               <Container>
                 <Row>

@@ -6,7 +6,7 @@ const Logs = () => {
       className="p-4"
       style={{ borderLeft: "1px solid black", height: "100%" }}
     >
-      <p>Logs components 2</p>
+      <h2>Your turn</h2>
     </div>
   );
 };

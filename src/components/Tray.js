@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { GameContexte } from "../contexts/gameContext";
 import Matche from "./matche/Matche";
 const init = [
   [" ", " ", "|", " ", " "],
@@ -7,33 +8,38 @@ const init = [
   ["|", "|", "|", "|", "|"],
 ];
 
-// const [matches, setMatches] = useState([]);
-
-const mapMatches = (raw) => {
-  return (
-    <Container>
-      <Row>
-        {raw.map((matche, j) => {
-          if (matche === "|") {
-            return (
-              <Col key={j}>
-                <Matche />{" "}
-              </Col>
-            );
-          } else {
-            return <Col key={j}>-</Col>;
-          }
-        })}
-      </Row>
-    </Container>
-  );
-};
-
 const Tray = () => {
+  const [tray, setTray] = useState(init);
+  const gameContext = useContext(GameContexte);
+
+  useEffect(() => {
+    setTray(gameContext.tray);
+  }, [gameContext.tray]);
+
+  const mapMatches = (raw) => {
+    return (
+      <Container>
+        <Row>
+          {raw.map((matche, j) => {
+            if (matche === "|") {
+              return (
+                <Col key={j}>
+                  <Matche />
+                </Col>
+              );
+            } else {
+              return <Col key={j}> </Col>;
+            }
+          })}
+        </Row>
+      </Container>
+    );
+  };
+
   return (
-    <Container>
+    <Container className="m-5">
       <div>
-        {init.map((raw, i) => {
+        {tray.map((raw, i) => {
           return (
             <div key={i}>
               {mapMatches(raw)} <br />

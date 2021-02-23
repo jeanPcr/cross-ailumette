@@ -1,44 +1,8 @@
-const input = {
-  line: "",
-  match: "",
-  answer: "",
-};
-const output = {
-  message: "",
-  tray: "",
-};
 /* INITIALISATION **/
 
 //Initialize the tray of game
-const launch = () => {
-  output.message = "Launching✨...";
-  // rl.question(
-  //   "Enter the number of ailumettes of the pyramid base : ",
-  //   function (base) {
-  //     if (parseInt(base) % 2 === 0) {
-  //       console.log(chalk.red("Error: the number must be odd"));
-  //       return launch();
-  //     } else if (parseInt(base) < 5) {
-  //       console.log(chalk.red("Error: not enough ailumettes"));
-  //       return launch();
-  //     } else if (
-  //       parseInt(base) < 0 ||
-  //       isNaN(parseInt(base)) ||
-  //       parseInt(base) === undefined
-  //     ) {
-  //       console.log(
-  //         chalk.red("Error: invalid input (positive number expected)")
-  //       );
-  //       return launch();
-  //     }
-  //     const tray = initPyramid(base);
-  //     displayTray(tray);
-  //     PlayerTurn(tray);
-  //   }
-  // );
-};
 
-const initPyramid = (base) => {
+export const initPyramid = (base) => {
   base = parseInt(base);
   const tab = new Array(base);
   for (let index = 0; index < tab.length; index++) {
@@ -247,13 +211,4 @@ const deleteAilumettes = (tray, x, yAilumettes, matches) => {
   }
   // console.log(tray);
   return tray;
-};
-
-/**GAME RUN PROCESS**/
-console.log(chalk.cyan("******* Welcome to the Ailumettes' Game ! ******\n"));
-
-module.exports = {
-  input,
-  output,
-  launch,
 };
